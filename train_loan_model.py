@@ -91,7 +91,7 @@ from sklearn.pipeline import Pipeline
 import joblib
 
 # Load the dataset
-file_path = "C:\\Users\\Yash\\OneDrive\\Desktop\\Django\\LoanApproval\\loan_approval_dataset.csv"  # Adjust path
+file_path = "loan_approval_dataset.csv"  # Adjust path
 loan_data = pd.read_csv(file_path)
 
 # Strip whitespace from column names

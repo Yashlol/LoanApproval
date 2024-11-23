@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Error{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="alert alert-danger shadow-lg p-4 rounded text-center">
+                <h2 class="text-danger mb-4">An Error Occurred</h2>
+                <p class="mb-3">{{ error_message }}</p>
+                <a href="{% url 'form' %}" class="btn btn-primary mt-3">Go Back to Form</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -3,7 +3,7 @@ from django.conf import settings
 from django.shortcuts import render
 from .forms import LoanApprovalForm
 from django.core.exceptions import ObjectDoesNotExist
-
+prediction="Not Approved"
 def loan_approval_view(request):
     """
     Handle loan approval form submission and prediction using a pre-trained model.
@@ -55,6 +55,9 @@ def loan_approval_view(request):
         form = LoanApprovalForm()
 
     return render(request, 'form.html', {'form': form})
+
+def result(request):
+    return render(request, 'result.html', {'result': prediction})
 
 def home(request):
     """
