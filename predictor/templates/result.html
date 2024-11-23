@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Loan Prediction Result{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h2 class="text-success">Loan Prediction Result</h2>
+    {% if result == "Approved" %}
+        <div class="alert alert-success mt-3">
+            <strong>Congratulations!</strong> Your loan is: <strong>{{ result }}</strong>
+        </div>
+    {% else %}
+        <div class="alert alert-danger mt-3">
+            <strong>Sorry!</strong> Your loan is: <strong>{{ result }}</strong>
+        </div>
+    {% endif %}
+    
+    <a href="{% url 'loan_approval' %}" class="btn btn-secondary mt-4">Back to Form</a>
+    <a href="{% url 'home' %}" class="btn btn-primary mt-4 ms-2">Back to Home</a>
+</div>
+{% endblock %}

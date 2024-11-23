@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Loan Approval Form{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4 text-primary text-center">Loan Approval Form</h2>
+            
+            <form method="post" class="bg-white p-4 rounded shadow-lg border">
+                {% csrf_token %}
+                
+                <!-- Display form errors if any -->
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <strong>Form submission failed:</strong>
+                        <ul>
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                
+                <!-- Render form fields with Bootstrap classes -->
+                {% for field in form %}
+                    <div class="form-group mb-4">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                        
+                        {% if field.name == 'education' %}
+                            <!-- Dropdown for education (Graduate / Not Graduate) -->
+                            <select class="form-control" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                <option value="1" {% if field.value == '1' %}selected{% endif %}>Graduate</option>
+                                <option value="0" {% if field.value == '0' %}selected{% endif %}>Not Graduate</option>
+                            </select>
+                        {% elif field.name == 'self_employed' %}
+                            <!-- Dropdown for self_employed (Yes / No) -->
+                            <select class="form-control" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                <option value="1" {% if field.value == '1' %}selected{% endif %}>Yes</option>
+                                <option value="0" {% if field.value == '0' %}selected{% endif %}>No</option>
+                            </select>
+                        {% else %}
+                            <!-- Render all other fields with form-control class -->
+                            <input type="{{ field.field.widget.input_type }}" class="form-control" name="{{ field.name }}" id="{{ field.id_for_label }}" value="{{ field.value|default:'' }}">
+                        {% endif %}
+                        
+                        <!-- Display help text below the field if available -->
+                        {% if field.help_text %}
+                            <small class="form-text text-muted">{{ field.help_text }}</small>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                
+                <!-- Submit button with more appealing styling -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-lg btn-primary w-100 mt-4">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

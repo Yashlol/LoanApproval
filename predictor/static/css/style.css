@@ -1,0 +1,172 @@
+/* static/css/style.css */
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+/* Header and Titles */
+.display-4 {
+    color: #007bff;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 123, 255, 0.2);
+}
+
+.text-primary {
+    color: #007bff !important;
+}
+
+/* Buttons */
+.btn-success, .button {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    text-decoration: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover, .button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Form Styling */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+form h2 {
+    color: #007bff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+form button {
+    width: 100%;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* Text and Typography */
+.lead {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text-success {
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* Links */
+a.btn {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+/* Home Page Styling */
+.home-hero {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #888;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .btn-success, .btn-secondary {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}

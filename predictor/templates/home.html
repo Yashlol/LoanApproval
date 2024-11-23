@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h1 class="display-4 text-primary">Welcome to the Loan Approval System</h1>
+    <p class="lead mt-3">
+        Find out if you qualify for a loan with our simple and fast prediction model!
+    </p>
+    <a href="{% url 'loan_approval' %}" class="btn btn-lg btn-warning mt-4 px-5 py-3 shadow-sm text-dark fw-bold">
+        <i class="fas fa-arrow-right me-2"></i> Start Loan Approval Process
+    </a>
+</div>
+
+<div class="mt-5">
+    <div class="alert alert-info shadow-sm rounded py-4" style="max-width: 80%; margin: 0 auto;">
+        <h2 class="text-primary">Why Choose Us?</h2>
+        <p class="lead mt-3">
+            - Instant loan eligibility checks<br>
+            - Secure and reliable system<br>
+            - Tailored to meet your financial needs
+        </p>
+    </div>
+</div>
+{% endblock %}
